@@ -9,3 +9,5 @@
 2. Untuk menyembunyikan file akan ada pilihan ya dan tidak
 3. Untuk mengganti password sebelumnya
 4. Untuk Keluar
+
+<img width="504" height="290" alt="Cuplikan layar 2025-07-15 180649" src="https://github.com/user-attachments/assets/4cd3d551-784c-4d1d-8485-a3dccff02f63" />
