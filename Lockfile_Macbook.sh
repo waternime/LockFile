@@ -3,6 +3,12 @@
 # Simple Folder Locker untuk macOS menggunakan encrypted .dmg
 # Default: ~/Private.dmg dimount ke /Volumes/PrivateLocker
 
+# Pastikan dijalankan di macOS
+if [[ "$(uname)" != "Darwin" ]]; then
+  echo "Script ini hanya untuk macOS!"
+  exit 1
+fi
+
 DMG_PATH="${HOME}/Private.dmg"
 VOLUME_NAME="PrivateLocker"
 MOUNT_POINT="/Volumes/${VOLUME_NAME}"
@@ -63,7 +69,7 @@ EOF
       ;;
     2)
       # Unmount / eject
-      if [ ! -d "$MOUNT_POINT" ]; then
+      if ! mount | grep -q "$MOUNT_POINT"; then
         echo "Folder tidak sedang dimount."
       else
         # detach via hdiutil detach path (bisa /Volumes/Name)
